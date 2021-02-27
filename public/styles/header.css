@@ -1,0 +1,30 @@
+.front-page-header {
+  height: 400px;
+  width: 100%;
+  background-color: #e67700;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+}
+
+.image {
+  display: flex;
+  justify-content: center; 
+}
+
+.full-name {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+h2 {
+  font-weight: 700;
+  color: white;
+  font-weight: bold;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.last-name {
+  font-weight: 500;
+}
+

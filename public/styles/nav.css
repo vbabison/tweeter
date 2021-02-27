@@ -1,0 +1,50 @@
+nav {
+  padding: 1.5em;
+  /* overflow: hidden;
+  position: fixed;
+  top: 0; */
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweeter{
+  font-family: 'Bungee', sans-serif;
+}
+
+.write {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+}
+
+.new-tweet {
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-bottom: 1%
+}
+
+.tweet-writter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.arrow-down {
+  flex-direction: column;
+  align-items: center;
+  color: Tomato;
+}
+
+article.tweet:hover {
+  box-shadow: 5px 5px #4056A1;
+}
+
+article .userhandle {
+  visibility: hidden;
+}
+
+article:hover .userhandle {
+  visibility: visible;
+}

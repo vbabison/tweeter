@@ -1,29 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
   <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;0,700;1,300;1,600;1,700&display=swap" rel="stylesheet">
+    <html lang="en">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+    <!-- Icons -->
+    <link
+            rel="stylesheet"
+            href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+            crossorigin="anonymous"
+        />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
-
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="tweeter">tweeter</span>
+      <div class="tweet-writter">
+        <div>
+          <span class="write">Write</span>
+          <span class="new-tweet">&nbsp;a new tweet</span>
+        </div>
+        <div class="arrow-down">
+          <span>
+            <i class="fas fa-angle-double-down"></i>
+          </span>
+        </div>
+      </div>
     </nav>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+    <header class="front-page-header">
+      <div class="image">
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div class="full-name">
+          <h2>Babison</h2>
+          <h2 class="last-name"> &nbsp; Vilvarajah</h2>
+      </div>
+    </header>
+  
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <section class="new-tweet" id="section-text">
+      <div class="error-box" id="long-text">
+        <p>Text is too long. Please respect 140 character limit.</p>
+      </div>
+      <div class="error-box" id="empty-box">
+        <p>Text field cannot be empty.</p>
+      </div>
+      <form action="./scripts/client.js" method="POST" id="target">
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <div>
+          <button type="submit" value="Go">Tweet</button>
+          <div id="other">
+            <output name="counter" id="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </div>
+      </form>
+    </section>
+    <section class="tweets">
+      <article class="tweet" id="tweet">
+        <header class="tweet-header">
+          <img src="https://i.imgur.com/nlhLi3I.png" class="profile-img"></img>
+          <p class="name-tag"></p>
+          <p class="userhandle"></p>
+        </header>
+        <!-- <div> -->
+        <p class="tweet-paragraph"></p>
+        <!-- </div> -->
+        <footer>
+          <p></p>
+          <div class="icons">
+            <i class="fas fa-flag fa-xs"></i>
+            <i class="far fa-retweet fa-xs"></i>
+            <i class="far fa-heart fa-xs"></i>
+          </div>
+        </footer>
+      </article>
+    </section>
+  </main>
+</body>
 </html>
