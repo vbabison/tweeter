@@ -12,4 +12,4 @@ An AJAX-based Twitter clone created using jQuery, HTML5 and CSS3.
 ## Screenshots
 
 !["Screenshot of front page"](https://github.com/vbabison/tweeter/blob/master/docs/tweet-header.png)
-!["Screenshot of tweets"](https://github.com/vbabison/tweeter/blob/master/docs/tweets.png)
+!["Screenshot of tweets"](https://github.com/vbabison/tweeter/blob/master/docs/all-tweets.png)
