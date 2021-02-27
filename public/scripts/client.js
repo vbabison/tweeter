@@ -3,6 +3,8 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+<script src="other_lib.js"></script>
+<script src="jquery.js"></script>
 $(document).ready(() => {
   const data = [
     {
@@ -27,12 +29,12 @@ $(document).ready(() => {
       },
       "created_at": 1461113959088
     }
-  ]
+  ];
 
   const renderTweets = function(tweets) {
     for (tweet of tweets) {
-      const value = createTweetElement(tweet)
-      $(".tweets").prepend(value)
+      const value = createTweetElement(tweet);
+      $(".tweets").prepend(value);
     }
   };
   // onmouseover="bigImg(this)" onmouseout="normalImg(this)"
@@ -53,51 +55,51 @@ $(document).ready(() => {
         <i class="far fa-heart fa-xs"></i>
       </div>
     </footer>
-  </article>`
-  return html  
+  </article>`;
+    return html;
   };
 
   $(document).ready(function() {
-    $("#long-text").hide()
-  })
+    $("#long-text").hide();
+  });
   $(document).ready(function() {
-    $("#empty-box").hide()
-  })
+    $("#empty-box").hide();
+  });
 
   $(function() {
     const targetForm = document.getElementById("target");
     targetForm.addEventListener("submit", (event) => {
       event.preventDefault();
       const value = document.getElementById("tweet-text").value;
-    if (value.length > 140) {
+      if (value.length > 140) {
+        $(document).ready(function() {
+          $("#long-text").show();
+        });
+        // alert("Text is too long");
+        return;
+      }
+      if (value.length === 0) {
+        $(document).ready(function() {
+          $("#empty-box").show();
+        });
+        // alert("Text field cannot be empty");
+        return;
+      }
       $(document).ready(function() {
-        $("#long-text").show()
-      })
-      // alert("Text is too long");
-      return;
-    }
-    if (value.length === 0) {
+        $("#long-text").hide();
+      });
       $(document).ready(function() {
-        $("#empty-box").show()
-      })
-      // alert("Text field cannot be empty");
-      return;
-    }
-    $(document).ready(function() {
-      $("#long-text").hide()
-    })
-    $(document).ready(function() {
-      $("#empty-box").hide()
-    })
+        $("#empty-box").hide();
+      });
 
       const formData = $(targetForm).serialize();
       $.ajax("/tweets", {
         method: 'POST',
         data: formData,
       }).done(function(data) {
-        $('.tweets').trigger('reload')
-      })
-    })
+        $('.tweets').trigger('reload');
+      });
+    });
   });
 
   const loadTweets = function() {
@@ -105,10 +107,10 @@ $(document).ready(() => {
       method: 'GET',
       dataType: "json"
     }).then(function(result) {
-      $("#tweet-text").val('')
-      $('.tweets').empty()
+      $("#tweet-text").val('');
+      $('.tweets').empty();
       renderTweets(result);
-    })
+    });
   };
   $('.tweets').on('reload', loadTweets).trigger('reload');
 });
