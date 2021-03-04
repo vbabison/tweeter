@@ -1,4 +1,3 @@
-<script src="jquery.js"></script>
 $(document).ready(function() {
   const myTweetText = document.getElementById('tweet-text');
   const myCounter = document.getElementById('counter');

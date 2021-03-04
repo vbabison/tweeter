@@ -3,8 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-<script src="other_lib.js"></script>
-<script src="jquery.js"></script>
 $(document).ready(() => {
   const data = [
     {

@@ -44,3 +44,9 @@ main {
   border: none;
   border-bottom: solid;
 }
+
+@media only screen and (min-width: 768px) {
+  .layout {
+    display: flex;
+  }
+}

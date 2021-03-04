@@ -6,7 +6,7 @@ button {
  
 div {
   font-family: 'Bungee', sans-serif;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
 }
 
@@ -19,7 +19,7 @@ div {
 }
 
 .userhandle {
-  display:flex
+  display: flex;
   justify-content: flex-end;
 }
 
