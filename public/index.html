@@ -1,11 +1,13 @@
 <!DOCTYPE html>
   <head>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;0,700;1,300;1,600;1,700&display=swap" rel="stylesheet">
     <html lang="en">
@@ -31,14 +33,15 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
+  
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="tweeter">tweeter</span>
       <div class="tweet-writter">
         <div>
-          <span class="write">Write</span>
-          <span class="new-tweet">&nbsp;a new tweet</span>
+          <span class="write">Write&nbsp;</span>
+          <span class="new-tweet">a new tweet</span>
         </div>
         <div class="arrow-down">
           <span>
@@ -49,7 +52,7 @@
     </nav>
     <div class="layout">
     <header class="front-page-header">
-      <div class="image">
+      <div>
           <img src="/images/profile-hex.png"> 
       </div>
       <br>
@@ -69,8 +72,9 @@
         <p>Text field cannot be empty.</p>
       </div>
       <form action="./scripts/client.js" method="POST" id="target">
-        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        <div>
+        <p>What are you humming about?</p>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div id="align-tweet-bottom">
           <button type="submit" value="Go">Tweet</button>
           <div id="other">
             <output name="counter" id="counter" class="counter" for="tweet-text">140</output>

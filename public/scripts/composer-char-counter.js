@@ -1,3 +1,4 @@
+// Count down as user input texts, if user goes over limit 140, text colour 
 $(document).ready(function() {
   const myTweetText = document.getElementById('tweet-text');
   const myCounter = document.getElementById('counter');

@@ -18,9 +18,8 @@ div {
   align-items: baseline;
 }
 
-.userhandle {
-  display: flex;
-  justify-content: flex-end;
+.tweet .userhandle {
+  align-items: flex-end;
 }
 
 .tweet {
@@ -76,4 +75,13 @@ p {
 .name-tag {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
+}
+
+#align-tweet-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-img-hex {
+  width: 250px
 }

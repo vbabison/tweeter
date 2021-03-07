@@ -46,7 +46,7 @@ $(document).ready(() => {
     </header>
     <p class="tweet-paragraph">${tweet.content.text}</p>
     <footer>
-      <p>10 days ago</p>
+      <p>${dateOfTweet(tweet.created_at)}</p>
       <div class="icons">
         <i class="fas fa-flag fa-xs"></i>
         <i class="far fa-retweet fa-xs"></i>
@@ -107,8 +107,29 @@ $(document).ready(() => {
     }).then(function(result) {
       $("#tweet-text").val('');
       $('.tweets').empty();
+      $("#counter").text('140'); // resets counter to 140
       renderTweets(result);
     });
   };
   $('.tweets').on('reload', loadTweets).trigger('reload');
 });
+
+const dateOfTweet = function(timestamp) {
+  const millSecAgo = Date.now() - timestamp;
+  const minAgo = 1000*60;
+  const hourAgo = 1000*60*60;
+  const dayAgo = 1000*60*60*24;
+  if (millSecAgo > dayAgo) {
+    const longDayAgo = Math.ceil(millSecAgo / dayAgo);
+    return `${longDayAgo} days ago`;
+  }
+  if (millSecAgo > hourAgo) {
+    const longHourAgo = Math.ceil(millSecAgo / hourAgo);
+    return `${longHourAgo} hours ago`;
+  }
+  if (millSecAgo > minAgo) {
+    const LongMinAgo = Math.ceil(millSecAgo / minAgo);
+    return `${LongMinAgo} minutes ago`
+  }
+  return "just now"
+}
