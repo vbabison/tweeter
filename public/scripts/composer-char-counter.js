@@ -1,14 +1,21 @@
-// Count down as user input texts, if user goes over limit 140, text colour 
-$(document).ready(function() {
+const characterCounter = function() {
   const myTweetText = document.getElementById('tweet-text');
   const myCounter = document.getElementById('counter');
-  const MAXCOUNTER = 140;
-
-  myTweetText.addEventListener('input', () => {
-    const remaining = MAXCOUNTER - myTweetText.value.length;
-    const color = remaining < MAXCOUNTER * 0 ? 'red' : null;
-
-    myCounter.textContent = `${remaining}`;
-    myCounter.style.color = color;
+  $(myTweetText).on("input", function() {
+    const max = 140;
+    let length = $(this).val().length;
+    let numOfCharsLeft = max - length;
+    if (length >= max) {
+      $(myCounter).text(numOfCharsLeft, "You have reached the limit");
+      $(myCounter).css("color", "red");
+    } else {
+      $(myCounter).css("color", "#545149");
+      $(myCounter).text(numOfCharsLeft + " characters left");
+    }
   });
+};
+
+
+$(document).ready(function() {
+  characterCounter();
 });

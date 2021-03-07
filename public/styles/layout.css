@@ -34,7 +34,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 10%;
+  
   padding-top: 1%;
   background-color: #f4f1ec;
 }

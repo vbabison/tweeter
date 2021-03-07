@@ -35,8 +35,6 @@ $(document).ready(() => {
       $(".tweets").prepend(value);
     }
   };
-  // onmouseover="bigImg(this)" onmouseout="normalImg(this)"
-  // onmouseover = "document.getElementById('userhandle').style.display = 'block'"
   const createTweetElement = function(tweet) {
     let html = `<article class="tweet" id="tweet" >
     <header class="tweet-header">
@@ -73,14 +71,12 @@ $(document).ready(() => {
         $(document).ready(function() {
           $("#long-text").show();
         });
-        // alert("Text is too long");
         return;
       }
       if (value.length === 0) {
         $(document).ready(function() {
           $("#empty-box").show();
         });
-        // alert("Text field cannot be empty");
         return;
       }
       $(document).ready(function() {
@@ -116,9 +112,9 @@ $(document).ready(() => {
 
 const dateOfTweet = function(timestamp) {
   const millSecAgo = Date.now() - timestamp;
-  const minAgo = 1000*60;
-  const hourAgo = 1000*60*60;
-  const dayAgo = 1000*60*60*24;
+  const minAgo = 1000 * 60;
+  const hourAgo = 1000 * 60 * 60;
+  const dayAgo = 1000 * 60 * 60 * 24;
   if (millSecAgo > dayAgo) {
     const longDayAgo = Math.ceil(millSecAgo / dayAgo);
     return `${longDayAgo} days ago`;
@@ -129,7 +125,7 @@ const dateOfTweet = function(timestamp) {
   }
   if (millSecAgo > minAgo) {
     const LongMinAgo = Math.ceil(millSecAgo / minAgo);
-    return `${LongMinAgo} minutes ago`
+    return `${LongMinAgo} minutes ago`;
   }
-  return "just now"
-}
+  return "just now";
+};

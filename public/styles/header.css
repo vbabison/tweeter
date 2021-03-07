@@ -12,7 +12,6 @@
 }
 
 .image {
-  padding: 5px;
   display: flex;
   justify-content: center; 
 }
@@ -34,9 +33,4 @@ h2 {
 .last-name {
   font-weight: 500;
 }
-@media only screen and (min-width:1024px) {
-  nav {
-    background-color: blue;
-    background-image: none;
-  }
-}
+
